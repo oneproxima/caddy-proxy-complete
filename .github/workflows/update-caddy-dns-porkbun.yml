@@ -21,15 +21,8 @@ jobs:
         run: |
           release_tag=$(curl -sL https://api.github.com/repos/caddy-dns/porkbun/releases/latest | jq -r ".tag_name")
           echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
-          current_tag=$(<dns-porkbun.version)
+          current_tag=$((grep "\-\-with github.com" Dockerfile | cut -d'@' -f 2))
           echo "current_tag=$current_tag" >> $GITHUB_OUTPUT
-
-      - name: Get Current dns-porkbun
-        id: dns-porkbun-current
-        env: 
-        BRANCH: ${{ steps.dns-porkbun.outputs.current_tag }}
-        run: |
-          echo "::set-output name=fragment::${BRANCH##*0`}"
 
       - name: Replace string in file
         if: steps.dns-porkbun.outputs.current_tag != steps.dns-porkbun.outputs.release_tag 
