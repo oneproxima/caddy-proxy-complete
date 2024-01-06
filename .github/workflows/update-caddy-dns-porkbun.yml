@@ -1,4 +1,4 @@
-name: update-module
+name: update-caddy-modules
 
 on:
   schedule:
@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  updated-module:
+  updated-caddy-modules:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -43,5 +43,5 @@ jobs:
 
             [1]: https://github.com/caddy-dns/porkbun
             [2]: https://github.com/peter-evans/create-pull-request
-          labels: dependencies\
+          labels: dependencies
           branch: github/modules/update-${{ steps.date.outputs.date }}
