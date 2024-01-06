@@ -1,9 +1,8 @@
 name: update-module
 
 on:
-  workflow_dispatch:
   schedule:
-    - cron:  '*/5 * * * *'
+    - cron:  '40 4 * * *'
 
 permissions:
   pull-requests: write
