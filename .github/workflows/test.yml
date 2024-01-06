@@ -11,7 +11,7 @@
           - name: Checkout
             uses: actions/checkout@v3
 
-          - name: Test Dockerfile Build 
+          - name: Check Dockerfile Build 
             run: |
               docker build -t caddy-docker-proxy -f Dockerfile .
               if [ $? -ne 0 ]; then
@@ -19,7 +19,15 @@
                 exit 1
               fi
 
-          - name: Test Loaded Modules
+          - name: Check container logs
+            uses: crazy-max/.github/.github/actions/container-logs-check@main
+            with:
+              container_name: ${{ env.CONTAINER_NAME }}
+              log_check: "serving initial configuration"
+              timeout: 60
+
+          - name: Check Loaded Modules
+            id: caddy_list_module_output
             run: |
-              docker run -it caddy-cker-proxy /bin/bash
-              /etc/caddy caddy caddy list-modules || echo $?
+              docker run -it caddy-docker-proxy sh -c "caddy list-modules"
+
