@@ -33,7 +33,7 @@ jobs:
           new-string: ${{ steps.dns-porkbun.outputs.release_tag }}
      
       - name: Get current date
-        ide: date
+        id: date
         run: echo "now=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
       - name: Create Pull Request
