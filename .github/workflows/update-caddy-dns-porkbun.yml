@@ -33,7 +33,8 @@ jobs:
           new-string: ${{ steps.dns-porkbun.outputs.release_tag }}
      
       - name: Get current date
-        run: echo "NOW=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+        ide: date
+        run: echo "now=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
@@ -48,4 +49,4 @@ jobs:
             [1]: https://github.com/caddy-dns/porkbun
             [2]: https://github.com/peter-evans/create-pull-request
           labels: dependencies
-          branch: "github/modules/update-${{ NOW  }}"
+          branch: "github/modules/update-${{ steps.date.now  }}"
