@@ -10,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  updated-caddy-modules:
+  update-caddy-modules:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -32,12 +32,12 @@ jobs:
           old-string: ${{ steps.dns-porkbun.outputs.current_tag }}
           new-string: ${{ steps.dns-porkbun.outputs.release_tag }}
      
-       - name: Get current date
-         run: echo "NOW=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+      - name: Get current date
+        run: echo "NOW=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
-        with:
+         with:
           commit-message: Updateto ${{ steps.dns-porkbun.outputs.release_tag }}
           title: Bump module /caddy-dns/porkbun from ${{ steps.dns-porkbun.outputs.current_tag }} to ${{ steps.dns-porkbun.outputs.release_tag }}
           body: |
