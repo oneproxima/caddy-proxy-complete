@@ -34,7 +34,14 @@
               targets: image-local
             env:
               DEFAULT_TAG: ${{ env.BUILD_TAG }}
-      
+          
+          - name: PWD 1
+            run: pwd
+
+          - name: PWD 2
+            run: pwd
+            working-directory: test
+
           - name: Start
             run: |
               docker compose up -d
