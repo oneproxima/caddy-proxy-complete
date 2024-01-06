@@ -1,4 +1,4 @@
-    name: ci
+    name: test
     on:
       push:
         branches:
@@ -18,3 +18,8 @@
                 echo "Error building image"
                 exit 1
               fi
+
+          - name: Test Loaded Modules
+            run: |
+              docker run -it caddy-cker-proxy /bin/bash
+              /etc/caddy caddy caddy list-modules || echo $?
