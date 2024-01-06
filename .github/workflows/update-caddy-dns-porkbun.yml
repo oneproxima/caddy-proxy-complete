@@ -21,7 +21,7 @@ jobs:
         run: |
           release_tag=$(curl -sL https://api.github.com/repos/caddy-dns/porkbun/releases/latest | jq -r ".tag_name")
           echo "release_tag=$release_tag" >> $GITHUB_OUTPUT
-          current_tag=$((grep "\-\-with github.com" Dockerfile | cut -d'@' -f 2))
+          current_tag=$(grep "\-\-with github.com" Dockerfile | cut -d'@' -f 2)
           echo "current_tag=$current_tag" >> $GITHUB_OUTPUT
 
       - name: Replace string in file
