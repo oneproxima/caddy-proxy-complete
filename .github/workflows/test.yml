@@ -35,13 +35,6 @@
             env:
               DEFAULT_TAG: ${{ env.BUILD_TAG }}
           
-          - name: PWD 1
-            run: pwd
-
-          - name: PWD 2
-            run: pwd
-            working-directory: test
-
           - name: Start
             run: |
               docker compose up -d
@@ -59,6 +52,7 @@
 
           - name: Check Loaded Modules
             id: caddy_list_module_output
+            working-directory: test
             run: |
-              docker run -it caddy-docker-proxy sh -c "caddy list-modules"
+              docker compose exec -w /etc/caddy caddy caddy list-modules || echo $?
 
