@@ -35,13 +35,21 @@
               username: ${{ github.repository_owner }}
               password: ${{ secrets.GITHUB_TOKEN }}
               logout: false
-          
-          - name: Build and push release image
-            uses: docker/build-push-action@v3
+    
+
+          - name: Build and push Docker image
+            uses: docker/build-push-action@v5
             with:
               context: .
-              file: ./Dockerfile
               push: true
               tags: "ghcr.io/${{ github.event.repository.owner.login }}/${{ github.event.repository.name }}:latest"
-              platforms: linux/amd64,linux/arm64
+          
+          # - name: Build and push release image
+          #  uses: docker/build-push-action@v3
+          #  with:
+          #    context: .
+          #    file: ./Dockerfile
+          #    push: true
+          #    tags: "ghcr.io/${{ github.event.repository.owner.login }}/${{ github.event.repository.name }}:latest"
+          #    platforms: linux/amd64,linux/arm64
               
