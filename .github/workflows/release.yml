@@ -34,6 +34,7 @@
               registry: ghcr.io
               username: ${{ github.repository_owner }}
               password: ${{ secrets.GITHUB_TOKEN }}
+              logout: false
           
           - name: Build and push release image
             uses: docker/build-push-action@v3
