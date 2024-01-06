@@ -3,7 +3,7 @@ name: Update caddy-dns/porkbun
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '0 10 * * *'
+    - cron:  '15 12  * * *'
 
 permissions:
   pull-requests: write
