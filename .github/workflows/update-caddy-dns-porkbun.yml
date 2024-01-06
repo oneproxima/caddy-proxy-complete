@@ -1,16 +1,16 @@
-name: Update caddy-dns/porkbun
+name: update-module
 
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '20 12  * * *'
+    - cron:  '30 5  * * *'
 
 permissions:
   pull-requests: write
   contents: write
 
 jobs:
-  updated-module-dns-porkbun:
+  updated-module:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -44,4 +44,5 @@ jobs:
 
             [1]: https://github.com/caddy-dns/porkbun
             [2]: https://github.com/peter-evans/create-pull-request
-          labels: dependencies
+          labels: dependencies\
+          branch: github/modules/update-${{ steps.date.outputs.date }}
