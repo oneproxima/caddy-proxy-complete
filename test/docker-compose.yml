@@ -5,8 +5,8 @@ services:
   caddy:
     image: ${CADDY_DOCKER_PROXY_IMAGE:-oneproxima/caddy-docker-proxy:latest}
     container_name: ${CADY_DOCKER_PROXY:-caddy-docker-proxy}
-    env_file:
-      - "./caddy-docker-proxy.env"
+    # env_file:
+    # - "./caddy-docker-proxy.env"
     ports:
       - "80:80" # HTTP Challenge
       - "443:443" # TLS
