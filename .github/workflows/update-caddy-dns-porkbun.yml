@@ -5,6 +5,10 @@ on:
   schedule:
     - cron:  '0 10 * * *'
 
+permissions:
+  pull-requests: write
+  contents: write
+
 jobs:
   updated-module-dns-porkbun:
     runs-on: ubuntu-latest
@@ -29,7 +33,7 @@ jobs:
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
-          commit-message: Update  to ${{ steps.dns-porkbun.outputs.release_tag }}
+          commit-message: Updateto ${{ steps.dns-porkbun.outputs.release_tag }}
           title: Update dns.providers.porkbun to ${{ steps.dns-porkbun.outputs.release_tag }}
           body: |
             Updates [dns-porkbun][1] to ${{ steps.dns-porkbun.outputs.release_tag }}
