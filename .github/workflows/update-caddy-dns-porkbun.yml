@@ -49,4 +49,4 @@ jobs:
             [1]: https://github.com/caddy-dns/porkbun
             [2]: https://github.com/peter-evans/create-pull-request
           labels: dependencies
-          branch: "github/modules/update-${{ steps.date.now  }}"
+          branch: "github/modules/update-${{ env.now  }}"
