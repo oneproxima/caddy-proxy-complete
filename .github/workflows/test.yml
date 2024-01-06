@@ -11,7 +11,7 @@
           - '**.md'
     
     env:
-      Build_TAG: caddy-docker-proxy:test
+      BUILD_TAG: caddy-docker-proxy:test
       CONTAINER_NAME: caddy-docker-proxy
 
     jobs:

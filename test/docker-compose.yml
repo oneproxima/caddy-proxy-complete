@@ -4,7 +4,7 @@ name: caddy-docker-proxy
 services:
   caddy:
     image: ${CADDY_DOCKER_PROXY_IMAGE:-oneproxima/caddy-docker-proxy:latest}
-    container_name: ${CADY_DOCKER_PROXY:-caddy-docker-proxy}
+    container_name: ${CADY_DOCKER_PROXY_CONTAINER:-caddy-docker-proxy}
     # env_file:
     # - "./caddy-docker-proxy.env"
     ports:
