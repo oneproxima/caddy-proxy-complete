@@ -1,7 +1,7 @@
 FROM caddy:2.7.6-builder AS builder
 
 RUN xcaddy build \
-    --with github.com/caddy-dns/porkbun@v0.1.3
+    --with github.com/caddy-dns/porkbun@v0.1.4
     # --with <additional-plugins>
 
 FROM caddy:2.7.6
