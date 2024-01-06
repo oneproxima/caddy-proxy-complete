@@ -1,6 +1,7 @@
 name: update-caddy-modules
 
 on:
+  workflow_dispatch:
   schedule:
     - cron:  '40 4 * * *'
 
@@ -44,4 +45,4 @@ jobs:
             [1]: https://github.com/caddy-dns/porkbun
             [2]: https://github.com/peter-evans/create-pull-request
           labels: dependencies
-          branch: github/modules/update-${{ steps.date.outputs.date }}
+          branch: "github/modules/update-${{ steps.date.outputs.date }}"
