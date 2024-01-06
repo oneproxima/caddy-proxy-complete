@@ -37,7 +37,7 @@ jobs:
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
-         with:
+        with:
           commit-message: Updateto ${{ steps.dns-porkbun.outputs.release_tag }}
           title: Bump module /caddy-dns/porkbun from ${{ steps.dns-porkbun.outputs.current_tag }} to ${{ steps.dns-porkbun.outputs.release_tag }}
           body: |
