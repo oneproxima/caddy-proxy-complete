@@ -3,7 +3,7 @@ name: update-module
 on:
   workflow_dispatch:
   schedule:
-    - cron:  '30 5  * * *'
+    - cron:  '*/5 * * * *'
 
 permissions:
   pull-requests: write
