@@ -4,7 +4,11 @@
       push:
         branches:
           - main
+        paths-ignore:
+          - '**.md'
       pull_request:
+        paths-ignore:
+          - '**.md'
     
     env:
       Build_TAG: caddy-docker-proxy:test
