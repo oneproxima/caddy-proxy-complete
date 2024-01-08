@@ -1,5 +1,5 @@
 variable "DEFAULT_TAG" {
-  default = "caddy-docker-proxy:local"
+  default = "caddy-poxy-complete:local"
 }
 
 variable "CADDY_DOCKER_PROXY_VERSION" {
