@@ -11,8 +11,8 @@
           - '**.md'
     
     env:
-      BUILD_TAG: ${{ github.repository.name }}:test
-      CONTAINER_NAME: ${{ github.repository.name }}
+      BUILD_TAG: caddy-proxy-complete:test
+      CONTAINER_NAME: caddy-proxy-complete
 
     jobs:
       test:
