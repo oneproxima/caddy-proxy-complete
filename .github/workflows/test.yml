@@ -11,8 +11,8 @@
           - '**.md'
     
     env:
-      BUILD_TAG: ${{ github.repository }}:test
-      CONTAINER_NAME: ${{ github.repository }}
+      BUILD_TAG: ${{ github.repository.name }}:test
+      CONTAINER_NAME: ${{ github.repository.name }}
 
     jobs:
       test:
