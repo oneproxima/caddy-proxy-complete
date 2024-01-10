@@ -5,7 +5,7 @@ To use the caddy-dns/porkbun in the Caddyfile you'll need to define where it's u
 ```bash
 # globally
 { # Global Options
-  email letsencrypt@randomproxima.com
+  email {$LETS_ENCRYPT_EMAL}
   acme_dns porkbun {
     api_key {$PORKBUN_API_KEY}
     api_secret_key {$PORKBUN_API_SECRET_KEY}
