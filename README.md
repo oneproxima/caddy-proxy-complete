@@ -29,4 +29,4 @@ sudo docker compose exec -w /etc/caddy caddy caddy reload
 
 ## License
 
-This project is licensed under the Apache-2.0 license.
+This project is licensed under the Apache License 2.0.
