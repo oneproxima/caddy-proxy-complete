@@ -26,3 +26,7 @@ sudo docker compose exec -w /etc/caddy caddy caddy reload
 ## References
 
 - https://caddy.community/t/docker-build-with-modules/19255
+
+## License
+
+This project is licensed under the Apache License 2.0.
